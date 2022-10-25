@@ -1,0 +1,9 @@
+#忽略文件夹
+/.dart_tool/
+/.vscode/
+/build/
+
+#忽略文件
+/.packages
+/.metadata
+/pubspec.lock
