@@ -1,6 +1,7 @@
 #忽略文件夹
 /.dart_tool/
 /.vscode/
+/.idea/
 /build/
 
 #忽略文件
