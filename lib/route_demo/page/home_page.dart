@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/route_demo/mode/user_mode.dart';
 
-import 'detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,12 +21,16 @@ class _HomePageState extends State<HomePage> {
   }
 
 void _jumpToAbout(BuildContext context){
-    Navigator.pushNamed<dynamic>(context, '111',arguments: "a home message").then((value) {
+    Navigator.pushNamed<dynamic>(context, 'about',arguments: "a home message").then((value) {
       setState(() {
         message=value!;
       });
     });
 }
+
+  void _jumpToMe(BuildContext context){
+    Navigator.pushNamed<dynamic>(context, 'me',arguments:UserMode(name: "王哈哈哈", age: 111));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +49,10 @@ void _jumpToAbout(BuildContext context){
             TextButton(
                 onPressed: () =>_jumpToAbout(context),
                 child: Text("跳转关于页", style: TextStyle(fontSize: 20))),
+
+            TextButton(
+                onPressed: () =>_jumpToMe(context),
+                child: Text("跳转我的页面", style: TextStyle(fontSize: 20))),
 
           ],
         ),
